@@ -4,7 +4,7 @@
     "publisher": "OrangeX4",
     "description": "VS Code extension for Typst math calculating, includes Arithmetic, Calculous, Matrix, Custom Variances and Funcions by yourself",
     "icon": "icon.png",
-    "version": "0.4.9",
+    "version": "0.5.0",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -20,6 +20,7 @@
         "onCommand:latex-sympy-calculator.factor",
         "onCommand:latex-sympy-calculator.expand",
         "onCommand:latex-sympy-calculator.numerical",
+        "onCommand:latex-sympy-calculator.solve",
         "onCommand:latex-sympy-calculator.python"
     ],
     "main": "./extension.js",
@@ -84,6 +85,11 @@
             },
             {
                 "category": "Typst-Sympy-Calculator",
+                "command": "latex-sympy-calculator.solve",
+                "title": "Solve equations of selection"
+            },
+            {
+                "category": "Typst-Sympy-Calculator",
                 "command": "latex-sympy-calculator.python",
                 "title": "Calculate Python expression"
             }
@@ -117,6 +123,12 @@
                 "command": "latex-sympy-calculator.numerical",
                 "key": "Shift+Ctrl+Alt+N",
                 "mac": "Shift+Cmd+Alt+N",
+                "when": "editorTextFocus && editorHasSelection"
+            },
+            {
+                "command": "latex-sympy-calculator.solve",
+                "key": "Shift+Ctrl+Alt+S",
+                "mac": "Shift+Cmd+Alt+S",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {

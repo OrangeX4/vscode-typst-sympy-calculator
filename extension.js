@@ -213,6 +213,32 @@ function activate(context) {
         })
     )
 
+    context.subscriptions.push(
+        vscode.commands.registerCommand('latex-sympy-calculator.solve', function () {
+            let editor = vscode.window.activeTextEditor
+            if (!editor) { return }
+            let doc = editor.document
+            let selection = editor.selection
+            let typst_math = doc.getText(selection)
+            let typst_file = doc.fileName
+
+            init_if_not(typst_file, () => {
+                post({
+                    typst_math: typst_math,
+                    typst_file: typst_file
+                }, 'solve', (data) => {
+                    let editor = vscode.window.activeTextEditor
+                    if (!editor) { return }
+                    editor.edit((edit) => {
+                        edit.replace(selection, data)
+                    })
+                }, (err) => {
+                    vscode.window.showErrorMessage(err)
+                })
+            })
+        })
+    )
+
 
     context.subscriptions.push(
         vscode.commands.registerCommand('latex-sympy-calculator.factor', function () {

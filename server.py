@@ -14,7 +14,7 @@ calc = server.calculator
 typst = server.typst
 typst2sympy = server.sympy
 exec_code = server.exec
-subs, simplify, evalf = server.subs, server.simplify, server.evalf
+subs, simplify, evalf, solve = server.subs, server.simplify, server.evalf, server.solve
 set_variance, unset_variance, clear_variance = server.set_variance, server.unset_variance, server.clear_variance
 operator, relation_op, additive_op, mp_op, postfix_op, reduce_op, func, func_mat, constant = calc.get_decorators()
 var = server.var
@@ -70,6 +70,20 @@ def post_evalf():
     try:
         return {
             'data': typst(evalf(base64_decode(request.json['typst_math']), base64_decode(request.json['typst_file']))),
+            'error': ''
+        }
+    except Exception as e:
+        return {
+            'data': '',
+            'error': str(e)
+        }
+
+
+@app.route('/solve', methods=['POST'])
+def post_solve():
+    try:
+        return {
+            'data': typst(solve(base64_decode(request.json['typst_math']), base64_decode(request.json['typst_file']))),
             'error': ''
         }
     except Exception as e:
