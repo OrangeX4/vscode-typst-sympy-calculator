@@ -23,13 +23,13 @@ function activate(context) {
 
     switch (platform) {
         case 'darwin':
-            python_path = vscode.workspace.getConfiguration('latex-sympy-calculator').get('macos')
+            python_path = vscode.workspace.getConfiguration('vscode-typst-sympy-calculator').get('macos')
             break;
         case 'linux':
-            python_path = vscode.workspace.getConfiguration('latex-sympy-calculator').get('linux')
+            python_path = vscode.workspace.getConfiguration('vscode-typst-sympy-calculator').get('linux')
             break;
         case 'win32':
-            python_path = vscode.workspace.getConfiguration('latex-sympy-calculator').get('windows')
+            python_path = vscode.workspace.getConfiguration('vscode-typst-sympy-calculator').get('windows')
             break;
         default:
             vscode.window.showErrorMessage('Unknown operate system.')
@@ -162,7 +162,7 @@ function activate(context) {
 
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.equal', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.equal', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -188,7 +188,7 @@ function activate(context) {
     )
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.numerical', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.numerical', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -214,7 +214,7 @@ function activate(context) {
     )
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.solve', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.solve', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -241,7 +241,7 @@ function activate(context) {
 
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.factor', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.factor', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -268,7 +268,7 @@ function activate(context) {
 
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.expand', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.expand', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -294,7 +294,7 @@ function activate(context) {
     )
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.replace', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.replace', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -320,7 +320,7 @@ function activate(context) {
     )
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.reimport', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.reimport', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document
@@ -334,7 +334,7 @@ function activate(context) {
     )
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.variances', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.variances', function () {
             get('/variances', (data) => {
                 let editor = vscode.window.activeTextEditor
                 if (!editor) { return }
@@ -350,7 +350,7 @@ function activate(context) {
 
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('latex-sympy-calculator.python', function () {
+        vscode.commands.registerCommand('vscode-typst-sympy-calculator.python', function () {
             let editor = vscode.window.activeTextEditor
             if (!editor) { return }
             let doc = editor.document

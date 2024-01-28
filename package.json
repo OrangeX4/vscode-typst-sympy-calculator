@@ -4,7 +4,7 @@
     "publisher": "OrangeX4",
     "description": "VS Code extension for Typst math calculating, includes Arithmetic, Calculous, Matrix, Custom Variances and Funcions by yourself",
     "icon": "icon.png",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -13,15 +13,15 @@
         "Notebooks"
     ],
     "activationEvents": [
-        "onCommand:latex-sympy-calculator.reimport",
-        "onCommand:latex-sympy-calculator.variances",
-        "onCommand:latex-sympy-calculator.equal",
-        "onCommand:latex-sympy-calculator.replace",
-        "onCommand:latex-sympy-calculator.factor",
-        "onCommand:latex-sympy-calculator.expand",
-        "onCommand:latex-sympy-calculator.numerical",
-        "onCommand:latex-sympy-calculator.solve",
-        "onCommand:latex-sympy-calculator.python"
+        "onCommand:vscode-typst-sympy-calculator.reimport",
+        "onCommand:vscode-typst-sympy-calculator.variances",
+        "onCommand:vscode-typst-sympy-calculator.equal",
+        "onCommand:vscode-typst-sympy-calculator.replace",
+        "onCommand:vscode-typst-sympy-calculator.factor",
+        "onCommand:vscode-typst-sympy-calculator.expand",
+        "onCommand:vscode-typst-sympy-calculator.numerical",
+        "onCommand:vscode-typst-sympy-calculator.solve",
+        "onCommand:vscode-typst-sympy-calculator.python"
     ],
     "main": "./extension.js",
     "contributes": {
@@ -29,17 +29,17 @@
             {
                 "title": "Typst-Sympy-Calculator",
                 "properties": {
-                    "latex-sympy-calculator.windows": {
+                    "vscode-typst-sympy-calculator.windows": {
                         "type": "string",
                         "default": "python",
                         "description": "Path of python for Windows."
                     },
-                    "latex-sympy-calculator.linux": {
+                    "vscode-typst-sympy-calculator.linux": {
                         "type": "string",
                         "default": "python3",
                         "description": "Path of python for Linux."
                     },
-                    "latex-sympy-calculator.macos": {
+                    "vscode-typst-sympy-calculator.macos": {
                         "type": "string",
                         "default": "python3",
                         "description": "Path of python for Mac OS."
@@ -50,89 +50,89 @@
         "commands": [
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.reimport",
+                "command": "vscode-typst-sympy-calculator.reimport",
                 "title": "Reimport Files for Typst Sympy Calculator"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.variances",
+                "command": "vscode-typst-sympy-calculator.variances",
                 "title": "Show Current Variances"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.equal",
+                "command": "vscode-typst-sympy-calculator.equal",
                 "title": "Append result of selected expression"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.replace",
+                "command": "vscode-typst-sympy-calculator.replace",
                 "title": "Replace expression with its result"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.factor",
+                "command": "vscode-typst-sympy-calculator.factor",
                 "title": "Factor expression"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.expand",
+                "command": "vscode-typst-sympy-calculator.expand",
                 "title": "Expand expression"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.numerical",
+                "command": "vscode-typst-sympy-calculator.numerical",
                 "title": "Calculate the numerical expression of selection"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.solve",
+                "command": "vscode-typst-sympy-calculator.solve",
                 "title": "Solve equations of selection"
             },
             {
                 "category": "Typst-Sympy-Calculator",
-                "command": "latex-sympy-calculator.python",
+                "command": "vscode-typst-sympy-calculator.python",
                 "title": "Calculate Python expression"
             }
         ],
         "keybindings": [
             {
-                "command": "latex-sympy-calculator.equal",
+                "command": "vscode-typst-sympy-calculator.equal",
                 "key": "Shift+Ctrl+Alt+E",
                 "mac": "Shift+Cmd+Alt+E",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.replace",
+                "command": "vscode-typst-sympy-calculator.replace",
                 "key": "Shift+Ctrl+Alt+R",
                 "mac": "Shift+Cmd+Alt+R",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.factor",
+                "command": "vscode-typst-sympy-calculator.factor",
                 "key": "Shift+Ctrl+Alt+F",
                 "mac": "Shift+Cmd+Alt+F",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.expand",
+                "command": "vscode-typst-sympy-calculator.expand",
                 "key": "Shift+Ctrl+Alt+X",
                 "mac": "Shift+Cmd+Alt+X",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.numerical",
+                "command": "vscode-typst-sympy-calculator.numerical",
                 "key": "Shift+Ctrl+Alt+N",
                 "mac": "Shift+Cmd+Alt+N",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.solve",
+                "command": "vscode-typst-sympy-calculator.solve",
                 "key": "Shift+Ctrl+Alt+S",
                 "mac": "Shift+Cmd+Alt+S",
                 "when": "editorTextFocus && editorHasSelection"
             },
             {
-                "command": "latex-sympy-calculator.python",
+                "command": "vscode-typst-sympy-calculator.python",
                 "key": "Shift+Ctrl+Alt+P",
                 "mac": "Shift+Cmd+Alt+P",
                 "when": "editorTextFocus && editorHasSelection"

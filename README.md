@@ -51,8 +51,10 @@ PS: If you want to install the extension, **PLEASE READ THE INSTALL DESCRIPTION!
 
 ## Install
 
-**IT IS IMPORTANT!** 
 **IT IS IMPORTANT!**
+
+**IT IS IMPORTANT!**
+
 **IT IS IMPORTANT!**
 
 Before you use the extension, please install python and two python modules: `typst-sympy-calculator` and `Flask`.
@@ -67,8 +69,10 @@ pip install Flask
 Then import the typst template file [`typst-sympy-calculator.typ`](https://github.com/OrangeX4/typst-sympy-calculator.typ) into your typst file. It will be like:
 
 ```typst
-import "typst-sympy-calculator.typ": *
+#import "typst-sympy-calculator.typ": *
 ```
+
+This step is not necessary, but it can provide you with examples of custom functions.
 
 
 ## Usage
